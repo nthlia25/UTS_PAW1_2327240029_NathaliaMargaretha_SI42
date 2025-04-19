@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulasi Pembayaran THR (Nathalia Margaretha)</title>
+</head>
+<body>
+    <h1>Simulasi Pembayaran THR</h1>
+    <br>
+    <label for="gajiPokok">Gaji Pokok (Rp): </label>
+    <input type="number" id="gajiPokok">
+    <br>
+    <label for="tunjanganTetap">Tunjangan Tetap (Rp): </label>
+    <input type="number" id="tunjanganTetap">
+    <br>
+    <label for="masaKerja">Masa Kerja: </label>
+    <input type="number" id="masaKerja">
+    <br>
+    <button onclick="hitungTotal()">Hitung Perhitungan Total Gaji</button>
+    <p id="hasilgaji">Hasil Total Gaji</p>
+    <br>
+    <button onclick="hitungTHR()">Hitung Perhitungan THR</button>
+    <p id="hasilTHR">Hasil Total THR</p>
+    <br>
+    <button onclick="hitungPPH()">Hitung Perhitungan PPH</button>
+    <p id="hasilPPH">Hasil Total PPH</p>
+
+
+    <script type="text/javascript">
+        function hitungTotal(){
+            let gajiPokok=parseFloat(document.getElementById("gajiPokok").value);
+            let tunjanganTetap=parseFloat(document.getElementById("tunjanganTetap").value);
+            let total= gajiPokok+tunjanganTetap;
+            document.getElementById("hasilgaji").innerHTML = total;
+        }
+
+        function hitungTHR(){
+            let gajiPokok=parseFloat(document.getElementById("gajiPokok").value);
+            let tunjanganTetap=parseFloat(document.getElementById("tunjanganTetap").value);
+            let masaKerja=parseFloat(document.getElementById("masaKerja").value);
+            if(masaKerja >= 12){
+                totalTHR= total
+            } else if (masaKerja > 0) {
+                totalTHR = masaKerja / 12 * (total)
+            }
+            document.getElementById("hasilTHR").innerHTML = totalTHR;
+        }
+
+        function hitungPPH(){
+            let pph21 = 0;
+            if(total > 4500000){
+                pph21 = 0.05 * (total)
+            }
+            document.getElementById("hasilPPH").innerHTML = pph21;
+        }
+    </script>
+</body>
+</html>
